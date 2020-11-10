@@ -1,0 +1,421 @@
+{% extends 'kanbanWebApp/base.html' %}
+{% load static %}
+
+{% block main %}      
+    
+    <script>
+        let qtdCartaoP1 = 7;
+        let qtdCartaoP2 = 7;
+        let qtdCartaoP3 = 7;
+        let qtdCartaoP4 = 7;
+        arrCardP1 = ['card1', 'card2', 'card3', 'card4', 'card5', 'card6', 'card7'];
+        arrCardP2 = ['card8', 'card9', 'card10', 'card11', 'card12', 'card13', 'card14'];
+        arrCardP3 = ['card15', 'card16', 'card17', 'card18', 'card19', 'card20', 'card21'];
+        arrCardP4 = ['card22', 'card23', 'card24', 'card25', 'card26', 'card27', 'card28'];
+        
+        function controlOpacity(id, typeClick) {
+            
+            if(typeClick === 'mais') {  
+                document.getElementById(id).style.opacity = 1;
+            } else if(typeClick === 'menos') {
+                document.getElementById(id).style.opacity = 0;
+            }
+        }
+
+        function clickMenos(arrCard) {
+            let id = '';
+            let array = [];
+            if (arrCard === 'arrCardP1') {
+                if(qtdCartaoP1 > 0 && qtdCartaoP1 <= 7) {
+                    qtdCartaoP1 -= 1;
+                }
+                console.log('QTDE CARTÃO =>', qtdCartaoP1);
+                array = arrCardP1;
+                if (qtdCartaoP1 === 6) {
+                    id = array[6];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP1 === 5) {
+                    id = array[5];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP1 === 4) {
+                    id = array[4];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP1 === 3) {
+                    id = array[3];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP1 === 2) {
+                    id = array[2];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP1 === 1) {
+                    id = array[1];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP1 === 0) {
+                    id = array[0];
+                    controlOpacity(id, 'menos');
+                }
+            } else if (arrCard === 'arrCardP2') {
+                if(qtdCartaoP2 > 0 && qtdCartaoP2 <= 7) {
+                    qtdCartaoP2 -= 1;
+                }
+                console.log('QTDE CARTÃO =>', qtdCartaoP2);
+                array = arrCardP2;
+                if (qtdCartaoP2 === 6) {
+                    id = array[6];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP2 === 5) {
+                    id = array[5];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP2 === 4) {
+                    id = array[4];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP2 === 3) {
+                    id = array[3];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP2 === 2) {
+                    id = array[2];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP2 === 1) {
+                    id = array[1];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP2 === 0) {
+                    id = array[0];
+                    controlOpacity(id, 'menos');
+                }   
+            } else if (arrCard === 'arrCardP3') {
+                if(qtdCartaoP3 > 0 && qtdCartaoP3 <= 7) {
+                    qtdCartaoP3 -= 1;
+                }
+                console.log('QTDE CARTÃO =>', qtdCartaoP3);
+                array = arrCardP3;
+                    if (qtdCartaoP3 === 6) {
+                        id = array[6];
+                        controlOpacity(id, 'menos');
+                    } else if (qtdCartaoP3 === 5) {
+                        id = array[5];
+                        controlOpacity(id, 'menos');
+                    } else if (qtdCartaoP3 === 4) {
+                        id = array[4];
+                        controlOpacity(id, 'menos');
+                    } else if (qtdCartaoP3 === 3) {
+                        id = array[3];
+                        controlOpacity(id, 'menos');
+                    } else if (qtdCartaoP3 === 2) {
+                        id = array[2];
+                        controlOpacity(id, 'menos');
+                    } else if (qtdCartaoP3 === 1) {
+                        id = array[1];
+                        controlOpacity(id, 'menos');
+                    } else if (qtdCartaoP3 === 0) {
+                        id = array[0];
+                        controlOpacity(id, 'menos');
+                    }
+            } else if (arrCard === 'arrCardP4') {
+                if(qtdCartaoP4 > 0 && qtdCartaoP4 <= 7) {
+                    qtdCartaoP4 -= 1;
+                }
+                console.log('QTDE CARTÃO =>', qtdCartaoP4);
+                array = arrCardP4;
+                if (qtdCartaoP4 === 6) {
+                    id = array[6];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP4 === 5) {
+                    id = array[5];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP4 === 4) {
+                    id = array[4];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP4 === 3) {
+                    id = array[3];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP4 === 2) {
+                    id = array[2];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP4 === 1) {
+                    id = array[1];
+                    controlOpacity(id, 'menos');
+                } else if (qtdCartaoP4 === 0) {
+                    id = array[0];
+                    controlOpacity(id, 'menos');
+                }
+            } 
+        }
+
+        function clickMais(arrCard) {
+            let id = '';
+            let array = [];
+            if (arrCard === 'arrCardP1') {
+                if(qtdCartaoP1 >= 0 && qtdCartaoP1 < 7) {
+                    qtdCartaoP1 += 1;
+                }
+                console.log('QTDE CARTÃO =>', qtdCartaoP1);
+                array = arrCardP1;
+                if (qtdCartaoP1 === 7) {
+                    id = array[6];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP1 === 6) {
+                    id = array[5];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP1 === 5) {
+                    id = array[4];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP1 === 4) {
+                    id = array[3];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP1 === 3) {
+                    id = array[2];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP1 === 2) {
+                    id = array[1];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP1 === 1) {
+                    id = array[0];
+                    controlOpacity(id, 'mais');
+                }
+            } else if (arrCard === 'arrCardP2') {
+                if(qtdCartaoP2 >= 0 && qtdCartaoP2 < 7) {
+                    qtdCartaoP2 += 1;
+                }
+                console.log('QTDE CARTÃO =>', qtdCartaoP2);
+
+                array = arrCardP2;
+                if (qtdCartaoP2 === 7) {
+                    id = array[6];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP2 === 6) {
+                    id = array[5];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP2 === 5) {
+                    id = array[4];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP2 === 4) {
+                    id = array[3];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP2 === 3) {
+                    id = array[2];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP2 === 2) {
+                    id = array[1];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP2 === 1) {
+                    id = array[0];
+                    controlOpacity(id, 'mais');
+                }   
+            } else if (arrCard === 'arrCardP3') {
+                if(qtdCartaoP3 >= 0 && qtdCartaoP3 < 7) {
+                    qtdCartaoP3 += 1;
+                }
+                console.log('QTDE CARTÃO =>', qtdCartaoP3);
+                array = arrCardP3;
+                    if (qtdCartaoP3 === 7) {
+                        id = array[6];
+                        controlOpacity(id, 'mais');
+                    } else if (qtdCartaoP3 === 6) {
+                        id = array[5];
+                        controlOpacity(id, 'mais');
+                    } else if (qtdCartaoP3 === 5) {
+                        id = array[4];
+                        controlOpacity(id, 'mais');
+                    } else if (qtdCartaoP3 === 4) {
+                        id = array[3];
+                        controlOpacity(id, 'mais');
+                    } else if (qtdCartaoP3 === 3) {
+                        id = array[2];
+                        controlOpacity(id, 'mais');
+                    } else if (qtdCartaoP3 === 2) {
+                        id = array[1];
+                        controlOpacity(id, 'mais');
+                    } else if (qtdCartaoP3 === 1) {
+                        id = array[0];
+                        controlOpacity(id, 'mais');
+                    }
+            } else if (arrCard === 'arrCardP4') {
+                if(qtdCartaoP4 >= 0 && qtdCartaoP4 < 7) {
+                    qtdCartaoP4 += 1;
+                }
+                console.log('QTDE CARTÃO =>', qtdCartaoP4);
+                array = arrCardP4;
+                if (qtdCartaoP4 === 7) {
+                    id = array[6];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP4 === 6) {
+                    id = array[5];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP4 === 5) {
+                    id = array[4];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP4 === 4) {
+                    id = array[3];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP4 === 3) {
+                    id = array[2];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP4 === 2) {
+                    id = array[1];
+                    controlOpacity(id, 'mais');
+                } else if (qtdCartaoP4 === 1) {
+                    id = array[0];
+                    controlOpacity(id, 'mais');
+                }
+            } 
+        }
+    </script>
+    <div class="container">
+        <div class="row">
+            <div class="col-1"  style="margin-top: 110px;">
+                <h5>Produto01</h5>
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/botaomenos.png' %}" height=50 width=50 style="margin-top: 100px; margin-left: 10px;" 
+                onClick="clickMenos('arrCardP1')">
+            </div>
+            <div class="col-8">
+                <img src="{% static 'img/background_panel1.png' %}" class="rounded mx-auto d-block">
+            </div>
+            <div class="col-2">
+                <img src="{% static 'img/botaomais.png' %}" height=50 width=50 style="margin-top: 100px; padding-left: -10px;"
+                onClick="clickMais('arrCardP1')">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1"  style="margin-top: 40px;">
+                <h5>Produto02</h5>
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/botaomenos.png' %}" height=50 width=50 style="margin-top: 30px; margin-left: 10px;"
+                onClick="clickMenos('arrCardP2')">
+            </div>
+            <div class="col-8">
+                <img src="{% static 'img/background_panel2.png' %}" class="rounded mx-auto d-block">
+            </div>
+            <div class="col-2">
+                <img src="{% static 'img/botaomais.png' %}" height=50 width=50 style="margin-top: 30px; padding-left: -10px;"
+                onClick="clickMais('arrCardP2')">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1"  style="margin-top: 40px;">
+                <h5>Produto03</h5>
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/botaomenos.png' %}" height=50 width=50 style="margin-top: 30px; margin-left: 10px;"
+                onClick="clickMenos('arrCardP3')">
+            </div>
+            <div class="col-8">
+                <img src="{% static 'img/background_panel2.png' %}" class="rounded mx-auto d-block">
+            </div>
+            <div class="col-2">
+                <img src="{% static 'img/botaomais.png' %}" height=50 width=50 style="margin-top: 30px; padding-left: -10px;"
+                onClick="clickMais('arrCardP3')">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1"  style="margin-top: 40px;">
+                <h5>Produto04</h5>
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/botaomenos.png' %}" height=50 width=50 style="margin-top: 30px; margin-left: 10px;"
+                onClick="clickMenos('arrCardP4')">
+            </div>
+            <div class="col-8">
+                <img src="{% static 'img/background_panel2.png' %}" class="rounded mx-auto d-block">
+            </div>
+            <div class="col-2">
+                <img src="{% static 'img/botaomais.png' %}" height=50 width=50 style="margin-top: 30px; padding-left: -10px;"
+                onClick="clickMais('arrCardP4')">
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 600px; margin-left: 10px; position: absolute">
+            <div class="col-1" id="card1">
+                <img src="{% static 'img/cartao1.png' %}" height=94 width=78 style="margin-top: -455px; margin-left: 178px; position: absolute">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao1.png' %}" height=94 width=78 style="margin-top: -455px; margin-left: 248px; position: absolute" id="card2">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao1.png' %}" height=94 width=78 style="margin-top: -455px; margin-left: 318px; position: absolute" id="card3">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao1.png' %}" height=94 width=78 style="margin-top: -455px; margin-left: 388px; position: absolute" id="card4">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao1.png' %}" height=94 width=78 style="margin-top: -455px; margin-left: 460px; position: absolute" id="card5">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao1.png' %}" height=94 width=78 style="margin-top: -455px; margin-left: 535px; position: absolute" id="card6">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao1.png' %}" height=94 width=78 style="margin-top: -455px; margin-left: 600px; position: absolute" id="card7">
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 600px; margin-left: 10px; position: absolute">
+            <div class="col-1">
+                <img src="{% static 'img/cartao2.png' %}" height=94 width=78 style="margin-top: -328px; margin-left: 178px; position: absolute" id="card8">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao2.png' %}" height=94 width=78 style="margin-top: -328px; margin-left: 248px; position: absolute" id="card9">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao2.png' %}" height=94 width=78 style="margin-top: -328px; margin-left: 318px; position: absolute" id="card10">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao2.png' %}" height=94 width=78 style="margin-top: -328px; margin-left: 388px; position: absolute" id="card11">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao2.png' %}" height=94 width=78 style="margin-top: -328px; margin-left: 460px; position: absolute" id="card12">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao2.png' %}" height=94 width=78 style="margin-top: -328px; margin-left: 535px; position: absolute" id="card13">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao2.png' %}" height=94 width=78 style="margin-top: -328px; margin-left: 600px; position: absolute" id="card14">
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 600px; margin-left: 10px; position: absolute">
+            <div class="col-1">
+                <img src="{% static 'img/cartao3.png' %}" height=94 width=78 style="margin-top: -216px; margin-left: 178px; position: absolute" id="card15">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao3.png' %}" height=94 width=78 style="margin-top: -216px; margin-left: 248px; position: absolute" id="card16">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao3.png' %}" height=94 width=78 style="margin-top: -216px; margin-left: 318px; position: absolute" id="card17">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao3.png' %}" height=94 width=78 style="margin-top: -216px; margin-left: 388px; position: absolute" id="card18">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao3.png' %}" height=94 width=78 style="margin-top: -216px; margin-left: 460px; position: absolute" id="card19">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao3.png' %}" height=94 width=78 style="margin-top: -216px; margin-left: 535px; position: absolute" id="card20">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao3.png' %}" height=94 width=78 style="margin-top: -216px; margin-left: 600px; position: absolute" id="card21">
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 600px; margin-left: 10px; position: absolute">
+            <div class="col-1">
+                <img src="{% static 'img/cartao4.png' %}" height=94 width=78 style="margin-top: -103px; margin-left: 178px; position: absolute" id="card22">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao4.png' %}" height=94 width=78 style="margin-top: -103px; margin-left: 248px; position: absolute" id="card23">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao4.png' %}" height=94 width=78 style="margin-top: -103px; margin-left: 318px; position: absolute" id="card24">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao4.png' %}" height=94 width=78 style="margin-top: -103px; margin-left: 388px; position: absolute" id="card25">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao4.png' %}" height=94 width=78 style="margin-top: -103px; margin-left: 460px; position: absolute" id="card26">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao4.png' %}" height=94 width=78 style="margin-top: -103px; margin-left: 535px; position: absolute" id="card27">
+            </div>
+            <div class="col-1">
+                <img src="{% static 'img/cartao4.png' %}" height=94 width=78 style="margin-top: -103px; margin-left: 600px; position: absolute" id="card28">
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

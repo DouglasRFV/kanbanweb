@@ -1,0 +1,24 @@
+{% load static %}
+    <div class="row">
+        <div class="col">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <img src="{% static 'img/logo.png' %}" alt="Estacionamento 24 horas" height="60">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Perguntas frequentes</a>
+                    </li>
+                </ul>
+                <i class="fas fa-sign-out-alt fa-2x" style="color:white" title="Sair"></i>
+            </div>
+            </nav>
+        </div>
+    </div>
