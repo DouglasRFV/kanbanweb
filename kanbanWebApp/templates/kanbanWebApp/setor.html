@@ -1,0 +1,43 @@
+{% extends 'kanbanWebApp/base.html' %}
+{% load static %}
+
+{% block main %}
+    <form method="POST" action="{% url 'kanbanWebApp_painel' %}" class="mt-4">
+        {% csrf_token %}
+        <h1>Setor 0{{idSetor}}</h1>
+        <div class="row">
+            <div class="col-sm-1 col-md-3 col-lg-4">
+                <a href="{% url 'kanbanWebApp_home' %}">
+                    <button type="button" class="btn btn-danger">Voltar</button>
+                </a>
+            </div>
+            <div class="col-sm-1 col-md-3 col-lg-8">
+                <button type="submit" class="btn btn-info float-right">Abrir Painel</button>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-sm-6 col-lg-12">
+            <table class="table mt-1">
+                <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Qtde</th>
+                    <th scope="col">Lote</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for produto in produtos %}
+                        <tr>
+                            <th scope="row">{{ produto.id}}</th>
+                            <td>{{ produto.nome}}</td>
+                            <td>{{ produto.quantidade}}</td>
+                            <td>{{ produto.lote}}</td>
+                        </tr>
+                    {% endfor%}
+                </tbody>
+            </table>   
+        </div>
+    </div>
+{% endblock %}

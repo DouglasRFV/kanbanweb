@@ -9,6 +9,7 @@ class Setor(models.Model):
 class Produto(models.Model):
     nome = models.CharField(max_length=100)
     quantidade = models.IntegerField()
+    lote = models.IntegerField()
     setor = models.ForeignKey(Setor, on_delete=models.CASCADE)
 
 
