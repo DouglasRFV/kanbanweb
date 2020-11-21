@@ -2,9 +2,9 @@
 {% load static %}
 
 {% block main %}
-    <form method="POST" action="{% url 'kanbanWebApp_painel' %}" class="mt-4">
+    <form method="POST" action="{% url 'kanbanWebApp_painel' idSetor %}" class="mt-4">
         {% csrf_token %}
-        <h1>Setor 0{{idSetor}}</h1>
+        <h1 name="id" value="idSetor">Setor 0{{idSetor}}</h1>
         <div class="row">
             <div class="col-sm-1 col-md-3 col-lg-4">
                 <a href="{% url 'kanbanWebApp_home' %}">
@@ -12,7 +12,7 @@
                 </a>
             </div>
             <div class="col-sm-1 col-md-3 col-lg-8">
-                <button type="submit" class="btn btn-info float-right">Abrir Painel</button>
+                <button type="submit" class="btn btn-info float-right" value="idSetor">Abrir Painel</button>
             </div>
         </div>
     </form>

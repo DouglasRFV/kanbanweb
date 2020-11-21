@@ -4,17 +4,19 @@
 {% block main %}      
     
     <script>
-        let qtdCartaoP1 = 7;
-        let qtdCartaoP2 = 7;
-        let qtdCartaoP3 = 7;
-        let qtdCartaoP4 = 7;
+        const qtd = JSON.parse('{{ produtos | safe }}');
+
+        let qtdCartaoP1 = qtd[0]['fields']['quantidade'] / 10;
+        let qtdCartaoP2 = qtd[1]['fields']['quantidade'] / 10;
+        let qtdCartaoP3 = qtd[2]['fields']['quantidade'] / 10;
+        let qtdCartaoP4 = qtd[3]['fields']['quantidade'] / 10;
+       
         arrCardP1 = ['card1', 'card2', 'card3', 'card4', 'card5', 'card6', 'card7'];
         arrCardP2 = ['card8', 'card9', 'card10', 'card11', 'card12', 'card13', 'card14'];
         arrCardP3 = ['card15', 'card16', 'card17', 'card18', 'card19', 'card20', 'card21'];
         arrCardP4 = ['card22', 'card23', 'card24', 'card25', 'card26', 'card27', 'card28'];
         
         function controlOpacity(id, typeClick) {
-            
             if(typeClick === 'mais') {  
                 document.getElementById(id).style.opacity = 1;
             } else if(typeClick === 'menos') {
@@ -325,8 +327,8 @@
             </div>
         </div>
         <div class="row" style="margin-bottom: 600px; margin-left: 10px; position: absolute">
-            <div class="col-1" id="card1">
-                <img src="{% static 'img/cartao1.png' %}" height=94 width=78 style="margin-top: -455px; margin-left: 178px; position: absolute">
+            <div class="col-1">
+                <img src="{% static 'img/cartao1.png' %}" height=94 width=78 style="margin-top: -455px; margin-left: 178px; position: absolute" id="card1">
             </div>
             <div class="col-1">
                 <img src="{% static 'img/cartao1.png' %}" height=94 width=78 style="margin-top: -455px; margin-left: 248px; position: absolute" id="card2">
@@ -417,5 +419,43 @@
             </div>
         </div>
     </div>
+    <script>
+        function inicialCards() {
+            let array1 = [...arrCardP1];
+            array1 = array1.reverse();
+            let array2 = [...arrCardP2];
+            array2 = array2.reverse();
+            let array3 = [...arrCardP3];
+            array3 = array3.reverse();
+            let array4 = [...arrCardP4];
+            array4 = array4.reverse();
+
+            const loop1 = 7 - qtdCartaoP1
+            for(i=0; i<loop1; i++) {
+                const idElement = array1[i];
+                document.getElementById(idElement).style.opacity = 0;
+            }
+
+            const loop2 = 7 - qtdCartaoP2
+            for(i=0; i<loop2; i++) {
+                const idElement = array2[i];
+                document.getElementById(idElement).style.opacity = 0;
+            }
+
+            const loop3 = 7 - qtdCartaoP3
+            for(i=0; i<loop3; i++) {
+                const idElement = array3[i];
+                document.getElementById(idElement).style.opacity = 0;
+            }
+
+            const loop4 = 7 - qtdCartaoP4
+            for(i=0; i<loop4; i++) {
+                const idElement = array4[i];
+                document.getElementById(idElement).style.opacity = 0;
+            }
+        }
+
+        inicialCards();
+    </script>
     
 {% endblock %}
