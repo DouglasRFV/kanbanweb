@@ -5,6 +5,7 @@ from .models import (
 )
 import json
 from django.core import serializers
+from django.http import HttpResponseRedirect
 
 def home(request):
     return render(request, 'kanbanWebApp/index.html')
@@ -21,11 +22,15 @@ def setor(request):
         return render(request, 'kanbanWebApp/setor.html', data)
 
 def painel(request, id):
-    #data = {'listaProd': json.dumps(list(produto))}
-    
     if request.method == 'POST':
         dataProd = Produto.objects.filter(setor=id)
         produtos = serializers.serialize('json', dataProd)
-        #data = {'produtos': produtos}
-        #print(data)
         return render(request, 'kanbanWebApp/painel.html', {'produtos': produtos})
+
+def updatePainel(request, id):
+    print(request)
+    if request.method == 'POST':
+        dataProd = Produto.objects.filter(setor=id)
+        produtos = serializers.serialize('json', dataProd)
+        return render(request, 'kanbanWebApp/painel.html', {'produtos': produtos})
+
