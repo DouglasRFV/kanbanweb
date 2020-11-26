@@ -1,4 +1,3 @@
 venvKanban
 .idea
-*.sqlite3
 *pyc
