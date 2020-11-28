@@ -1,0 +1,15 @@
+{% extends 'kanbanWebApp/base.html' %}
+{% load static %}
+
+{% block main %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Editar Produto</h1>
+            <form action="{% url 'kanbanWebApp_produto_update' produto.id  %}" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn btn-primary" type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

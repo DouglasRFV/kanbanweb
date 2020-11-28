@@ -2,6 +2,18 @@
 {% load static %}
 
 {% block main %}
+    <script>
+        $('#btn1').on('click', function (e) {
+            console.log('TESTE');
+
+        });
+
+        function myFunction(btn, id) {
+            console.log('TESTE =>', btn);
+            console.log('TESTE =>', id);
+            
+        }
+    </script>
     <form method="POST" action="{% url 'kanbanWebApp_painel' idSetor %}" class="mt-4">
         {% csrf_token %}
         <h1 name="id" value="idSetor">Setor 0{{idSetor}}</h1>
@@ -25,6 +37,7 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Qtde</th>
                     <th scope="col">Lote</th>
+                    <th scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,10 +47,26 @@
                             <td>{{ produto.nome}}</td>
                             <td>{{ produto.quantidade}}</td>
                             <td>{{ produto.lote}}</td>
+                            <td>
+                                <a href="{% url 'kanbanWebApp_produto_update' produto.id %}">
+                                    <button type="button" class="btn btn-success"><i class="far fa-edit"></i></button>
+                                </a>
+                                <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                            </td>
                         </tr>
                     {% endfor%}
                 </tbody>
             </table>   
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Cadastrar Produto</h1>
+            <form action="{% url 'kanbanWebApp_produto_novo' idSetor %}" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn btn-primary" type="submit">Cadastrar</button>
+            </form>
         </div>
     </div>
 {% endblock %}
