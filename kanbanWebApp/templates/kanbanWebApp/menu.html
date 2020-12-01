@@ -7,14 +7,12 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <img src="{% static 'img/logo.png' %}" alt="Estacionamento 24 horas" height="60">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    
+                <a href="{% url 'kanbanWebApp_home' %}">
+                    <img src="{% static 'img/logo.png' %}" alt="Estacionamento 24 horas" height="60">
+                </a>
+                <ul class="navbar-nav mr-auto ml-5">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Perguntas frequentes</a>
+                        <a class="nav-link" href="{% url 'kanbanWebApp_perguntas' %}">Perguntas frequentes</a>
                     </li>
                 </ul>
                 <i class="fas fa-sign-out-alt fa-2x" style="color:white" title="Sair"></i>

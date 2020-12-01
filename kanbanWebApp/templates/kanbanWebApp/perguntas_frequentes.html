@@ -1,0 +1,114 @@
+{% extends 'kanbanWebApp/base.html' %}
+{% load static %}
+
+{% block main %}
+    <style type="text/css">
+        body{
+            background-color: rgb(135,206,235);
+        }
+        #P_verde{
+            color: green;
+        }
+        #P_amarelo{
+            color: yellow;
+        }
+        #P_vermelho{
+            color: red;
+        }
+        .card-header{
+            background-color: rgb(30,144,255);
+        }
+        .card-body{
+            background-color: rgb(100,149,237);
+        }
+        .btn{
+            color:white;
+        }
+    </style>
+   <div class="container">
+		<div id="accordion">
+		  <div class="card">
+		    <div class="card-header" id="headingOne">
+		      <h5 class="mb-0">
+		        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		          1. O que é o Kanban ?
+		        </button>
+		      </h5>
+		    </div>
+		    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+		      <div class="card-body" >
+		        É um sistema que utiliza cartões de cores diferentes ou tamanhos diferentes para designar e especificar tarefas.
+		      </div>
+		    </div>
+		  </div>
+		 <div class="card mt-2">
+		    <div class="card-header" id="headingTwo">
+		      <h5 class="mb-0">
+		        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		          2. Qual o significado das cores presentes no quadro ?
+		        </button>
+		      </h5>
+		    </div>
+		    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+		      <div class="card-body">
+		    	<p id="P_verde">-Verde:</p> <p>Estoque possuí uma quantidade adequada de um produto.</p>
+		    	<p id="P_amarelo">-Amarelo:</p> <p>Indica que o estoque de um produto está chegando próximo da quantidade mínima estabelecida.</p>
+		    	<p id="P_vermelho">-Vermelho:</p> <p>Estoque do produto está abaixo do mínimo estabelecido.</p>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="card mt-2">
+		    <div class="card-header" id="headingThree">
+		      <h5 class="mb-0">
+		        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+		          3. Quem são os usuários desse sistema ?
+		        </button>
+		      </h5>
+		    </div>
+		    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+		      <div class="card-body">
+		        Cada usuário é um gestor de um determinado setor da empresa, cada um tendo controle de um Quadro Kanban relacionado ao seu setor de atuação.
+		      </div>
+		    </div>
+		  </div>
+		    <div class="card mt-2">
+		    <div class="card-header" id="headingFour">
+		      <h5 class="mb-0">
+		        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+		          4. Eu posso acessar o quadro dos de mais setores ?
+		        </button>
+		      </h5>
+		    </div>
+		    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+		      <div class="card-body">
+		        Sim, porém apenas para visualização.
+		      </div>
+		    </div>
+		  </div>
+		  <div class="card mt-2">
+		    <div class="card-header" id="headingFive">
+		      <h5 class="mb-0">
+		        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+		          5. Como o quadro funciona ?
+		        </button>
+		      </h5>
+		    </div>
+		    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+		      <div class="card-body">
+		        <p>Cada linha representa um produto e cada cartão uma determinada quantidade do mesmo.</p>
+		        <p>Para modificar o quadro são utilizados os botões "+" e "-", adicionando ou removendo um cartão a cada clique.</p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+        <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Collapsible Group Item #1
+        </button>
+      </h5>
+    </div>
+    </div>
+{% endblock %}

@@ -10,6 +10,9 @@ from .forms import ProdutoForm
 def home(request):
     return render(request, 'kanbanWebApp/index.html')
 
+def perguntas(request):
+    return render(request, 'kanbanWebApp/perguntas_frequentes.html')
+
 def setor(request):
     if request.method == 'POST':
         idSetor = request.POST['selectSetor']

@@ -6,10 +6,12 @@ from .views import (
     produto_novo,
     produto_update,
     produto_delete,
+    perguntas,
 )    
 
 urlpatterns = [
     path('', home, name='kanbanWebApp_home'),
+    path('perguntas-frequentes', perguntas, name='kanbanWebApp_perguntas'),
     path('painel/<int:id>/', painel, name='kanbanWebApp_painel'),
     path('setor/', setor, name='kanbanWebApp_setor'),
     path('produto-novo/<int:id>', produto_novo, name='kanbanWebApp_produto_novo'),
