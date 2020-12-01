@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Deletar Produto</h1>
+            <div class="row">
+                <div class="col-sm-12 mt-2">
+                    <h2>Tem certeza que deseja deletar: {{ objDelete }}</h2>
+                </div>
+            </div>
+
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Deletar</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

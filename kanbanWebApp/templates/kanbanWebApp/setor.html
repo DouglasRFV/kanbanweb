@@ -48,10 +48,12 @@
                             <td>{{ produto.quantidade}}</td>
                             <td>{{ produto.lote}}</td>
                             <td>
-                                <a href="{% url 'kanbanWebApp_produto_update' produto.id %}">
+                                <a href="{% url 'kanbanWebApp_produto_update' produto.id idSetor %}">
                                     <button type="button" class="btn btn-success"><i class="far fa-edit"></i></button>
                                 </a>
-                                <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                <a href="{% url 'kanbanWebApp_produto_delete' produto.id idSetor %}">
+                                    <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                </a>
                             </td>
                         </tr>
                     {% endfor%}
