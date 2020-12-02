@@ -127,3 +127,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
+LOGIN_URL = 'kanbanWebApp_home'
+LOGIN_REDIRECT_URL = 'kanbanWebApp_home'
+LOGOUT_REDIRECT_URL = 'login'
