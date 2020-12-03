@@ -15,7 +15,9 @@
                         <a class="nav-link" href="{% url 'kanbanWebApp_perguntas' %}">Perguntas frequentes</a>
                     </li>
                 </ul>
-                <i class="fas fa-sign-out-alt fa-2x" style="color:white" title="Sair"></i>
+                <a class="nav-link" href="{% url 'logout' %}">
+                    <i class="fas fa-door-open fa-2x" style="color:white" title="Logout"></i>
+                </a>
             </div>
             </nav>
         </div>
