@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
 from .models import (
     Produto,
     Setor
@@ -7,12 +8,17 @@ import json
 from django.core import serializers
 from .forms import ProdutoForm
 
+@login_required
 def home(request):
     return render(request, 'kanbanWebApp/index.html')
 
+
+@login_required
 def perguntas(request):
     return render(request, 'kanbanWebApp/perguntas_frequentes.html')
 
+
+@login_required
 def setor(request):
     if request.method == 'POST':
         idSetor = request.POST['selectSetor']
@@ -25,6 +31,8 @@ def setor(request):
         data = {'produtos': produtos}
         return render(request, 'kanbanWebApp/setor.html', data)
 
+
+@login_required
 def produto_novo(request, id):
     form = ProdutoForm(request.POST or None)
     if form.is_valid():
@@ -35,8 +43,9 @@ def produto_novo(request, id):
     data = {'produtos': produtos, 'idSetor': idSetor, 'form': form}
     return render(request, 'kanbanWebApp/setor.html', data)
 
-def produto_update(request, param1, param2):
 
+@login_required
+def produto_update(request, param1, param2):
     data = {}
     produto = Produto.objects.get(id=param1)
     form = ProdutoForm(request.POST or None, instance=produto)
@@ -61,6 +70,8 @@ def produto_update(request, param1, param2):
         data['idSetor'] = param2
         return render(request, 'kanbanWebApp/update_produto.html', data)
 
+
+@login_required
 def produto_delete(request, param1, param2):
     if request.method == 'POST':
         produto = Produto.objects.get(id=param1)
@@ -74,6 +85,8 @@ def produto_delete(request, param1, param2):
         produto = Produto.objects.get(id=param1)
         return render(request, 'kanbanWebApp/delete_confirm.html', { 'objDelete': produto })
 
+
+@login_required
 def painel(request, id):
     if request.method == 'POST':
         dataProd = Produto.objects.filter(setor=id)

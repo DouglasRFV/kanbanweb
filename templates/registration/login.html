@@ -1,12 +1,11 @@
 {% extends "base.html" %} {% block main %} {% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
+<h5>Seu nome de usuário e senha não coincidem. Por favor, tente novamente.</h5>
 {% endif %} {% if next %} {% if user.is_authenticated %}
-<p>
-  Your account doesn't have access to this page. To proceed, please login with
-  an account that has access.
-</p>
+<h5>
+  Sua conta não tem acesso a esta página. Para continuar, faça login com uma conta que tenha acesso.
+</h5>
 {% else %}
-<p>Please login to see this page.</p>
+<h5>Por favor faça login para acessar.</h5>
 {% endif %} {% endif %}
 
 <div class="jumbotron jumbotron-fluid">
